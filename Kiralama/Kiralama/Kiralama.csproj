@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <UserSecretsId>aspnet-WebApp4-028ADD0B-622C-480F-BF88-3338F6F7449A</UserSecretsId>
+    <AssemblyName>WebApp4</AssemblyName>
+    <RootNamespace>WebApp4</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="wwwroot\vid\**" />
+    <Content Remove="wwwroot\vid\**" />
+    <EmbeddedResource Remove="wwwroot\vid\**" />
+    <None Remove="wwwroot\vid\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.9" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Views\Shared\AccessDenied.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\" />
+    <Folder Include="Views\Shared\Components\" />
+  </ItemGroup>
+
+</Project>

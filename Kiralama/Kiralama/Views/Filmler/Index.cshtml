@@ -1,0 +1,101 @@
+﻿@model IEnumerable<Kiralama.Models.Filmler>
+
+@{
+    ViewData["Title"] = "Filmler";
+}
+
+<h2>Filmler</h2>
+
+
+@foreach (var item in Model)
+{
+    <table>
+
+        <tr>
+            <th style="padding:5px">
+                <p>Afiş:</p>
+            </th>
+            <td>
+                <img src="@item.ResimYolu.ToString()" width="300" height="300" class="img-responsive" alt="Inception" />
+            </td>
+        </tr>
+        <tr>
+            <th style="padding:5px">
+                <p>Adı:</p>
+            </th>
+            <td>
+                <strong>@Html.DisplayFor(modelItem => item.FilmAdi)</strong><br />
+            </td>
+
+        </tr>
+        <tr>
+            <th style="padding:5px">
+                <p>Türü:</p>
+            </th>
+            <td>
+                <strong>@Html.DisplayFor(modelItem => item.Tur)</strong>
+            </td>
+        </tr>
+        <tr>
+            <th style="padding:5px">
+                <p>Dil:</p>
+            </th>
+            <td>
+                <strong>@Html.DisplayFor(modelItem => item.Dil)</strong>
+            </td>
+        </tr>
+        <tr>
+            <th style="padding:5px">
+                <p>Süre:</p>
+            </th>
+            <td>
+                <strong>@Html.DisplayFor(modelItem => item.Sure)</strong>
+            </td>
+        </tr>
+        <tr>
+            <th style="padding:5px">
+                <p>Konu:</p>
+            </th>
+            <td>
+                <strong>@Html.DisplayFor(modelItem => item.Aciklama)</strong>
+            </td>
+        </tr>
+        <tr>
+            <th style="padding:5px">
+                <p>Yönetmen:</p>
+            </th>
+            <td>
+                <strong>@Html.DisplayFor(modelItem => item.Yonetmen)</strong>
+            </td>
+        </tr>
+        <tr>
+            <th style="padding:5px">
+                <p>Oyuncular:</p>
+            </th>
+            <td>
+                <strong>@Html.DisplayFor(modelItem => item.Oyuncular)</strong>
+            </td>
+        </tr>
+        <tr>
+            <th style="padding:5px">
+                <p>Ücret:</p>
+            </th>
+            <td>
+                <strong>@Html.DisplayFor(modelItem => item.KiralamaUcreti)</strong>
+            </td>
+        </tr>
+        <tr>
+            
+            <td>
+                <a style="border:solid ; border-color:black  ; background-color:royalblue ; color:white" asp-action="Details" asp-route-id="@item.Id">Satın Alma</a>
+            </td>
+        </tr>
+
+
+
+    </table>
+    <br />
+    <br />
+    <br />
+}
+

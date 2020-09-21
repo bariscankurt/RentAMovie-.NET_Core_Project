@@ -1,0 +1,79 @@
+﻿@model IEnumerable<IdentityRole>
+
+
+<section class="banner-area relative about-banner" id="home" >
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+        <div class="row d-flex align-items-center justify-content-center" >
+            <div class="about-content col-lg-12">
+                <h1 class="text-white">
+                    Kullanıcı Yetki Yönetimi
+                </h1>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container" style="text-align:center">
+    <div>
+
+        <a class="primary btn btn-danger" asp-action="Create">Kullanıcı türü oluştur.</a>
+
+        <table class="table table-bordered table-striped table-sm m-1 p-1">
+            <thead>
+                <tr>
+                    <th>
+                        Tür Id
+                    </th>
+                    <th>
+                        Kullanıcı Türü
+                    </th>
+                    <th>
+                        Kayıtlı Kullanıcılar
+                    </th>
+
+                    <th></th>
+                    <th></th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                @if (TempData["message"] != null)
+                {
+                    <div class="alert alert-success">
+                        @TempData["message"]
+                    </div>
+                }
+                @foreach (var role in Model)
+                {
+                    <tr>
+                        <td>
+                            @role.Id
+                        </td>
+                        <td>
+                            @role.Name
+                        </td>
+                        <td identityrole="@role.Id"></td>
+                        <td>
+                            <form asp-route-id="@role.Id" asp-action="Delete" method="post">
+
+                                <button type="submit"> Sil</button>
+
+                            </form>
+
+                        </td>
+                        <td>
+                            <button><a asp-action="Edit" asp-route-id="@role.Id">Düzenle</a></button>
+                        </td>
+
+
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+   
+</div>
+

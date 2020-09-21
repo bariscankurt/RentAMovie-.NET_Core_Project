@@ -1,0 +1,75 @@
+﻿@model Kiralama.Models.Filmler
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Film Kaldır</h2>
+
+<h3>Bu filmi silmek istediğinize emin misiniz?</h3>
+<div>
+    <h4>Filmler</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FilmAdi)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FilmAdi)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ResimYolu)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ResimYolu)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Tur)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Tur)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Dil)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Dil)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Sure)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Sure)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Aciklama)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Aciklama)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Yonetmen)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Yonetmen)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Oyuncular)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Oyuncular)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.KiralamaUcreti)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.KiralamaUcreti)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Sil" class="btn btn-default" /> |
+        <a asp-action="Index">Geri Dön</a>
+    </form>
+</div>

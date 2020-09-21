@@ -1,0 +1,30 @@
+﻿@model Kiralama.Models.SatinAlma
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Detaylar</h2>
+
+<div>
+    <h4>Satın Alma</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UserID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UserID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FilmID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FilmID)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Düzenle</a> |
+    <a asp-action="Index">Geri Dön</a>
+</div>

@@ -1,0 +1,97 @@
+﻿@model IEnumerable<Kiralama.Models.Filmler>
+
+@{
+    ViewData["Title"] = "Index";
+}
+    <br />
+
+<h2>Kiralamış Olduğunuz Filmler</h2>
+
+<br/>
+<br />
+@foreach (var item in Model)
+{
+    <table>
+
+        <tr>
+            <th style="padding:5px">
+                <p>Afiş:</p>
+            </th>
+            <td>
+                <img src="@item.ResimYolu.ToString()" width="300" height="300" class="img-responsive" alt="Inception" />
+            </td>
+        </tr>
+        <tr>
+            <th style="padding:5px">
+                <p>Adı:</p>
+            </th>
+            <td>
+                @Html.DisplayFor(modelItem => item.FilmAdi)<br />
+            </td>
+
+        </tr>
+        <tr>
+            <th style="padding:5px">
+                <p>Türü:</p>
+            </th>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tur)
+            </td>
+        </tr>
+        <tr>
+            <th style="padding:5px">
+                <p>Dil:</p>
+            </th>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dil)
+            </td>
+        </tr>
+        <tr>
+            <th style="padding:5px">
+                <p>Süre:</p>
+            </th>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sure)
+            </td>
+        </tr>
+        <tr>
+            <th style="padding:5px">
+                <p>Konu:</p>
+            </th>
+            <td>
+                @Html.DisplayFor(modelItem => item.Aciklama)
+            </td>
+        </tr>
+        <tr>
+            <th style="padding:5px">
+                <p>Yönetmen:</p>
+            </th>
+            <td>
+                @Html.DisplayFor(modelItem => item.Yonetmen)
+            </td>
+        </tr>
+        <tr>
+            <th style="padding:5px">
+                <p>Oyuncular:</p>
+            </th>
+            <td>
+                @Html.DisplayFor(modelItem => item.Oyuncular)
+            </td>
+        </tr>
+        <tr>
+            <th style="padding:5px">
+                <p>Ücret:</p>
+            </th>
+            <td>
+                @Html.DisplayFor(modelItem => item.KiralamaUcreti)
+            </td>
+        </tr>
+
+
+
+
+    </table>
+    <br />
+    <br />
+    <br />
+}
